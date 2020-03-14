@@ -219,18 +219,21 @@ public class LinkedList {
      * Example if 7 items in list it gives middle element which is 4
      * if 5 items it gives 3 element of list
      */
-    public void middleOFLinkedList() {
-        if (head != null) {
+    public void middleOfLinkList(){
+        if (head != null){
             Node current = head;
             Node previous = head;
-            while (current != null && current.next != null) {
-                current = current.next.next;
+            while (current.next != null && current.next.next != null){
                 previous = previous.next;
+                current = current.next.next;
             }
-            System.out.println("The middle element is " + previous.value);
+            if(current.next == null)
+                System.out.println("The middle node is "+previous.value);
+            else{
+                System.out.println("The middle node is "+ previous.value +" and " + previous.next.value);
+            }
         }
     }
-
     /**
      * This method reverseLinkedList reverse our linkedList :D :D :D
      */
